@@ -28,7 +28,7 @@ describe("Engineer", () => {
         //Test for getting the github username, getGithub()
         it("Should get the github username, getGithub()", () => {
 
-            //Create test instance 
+            //Create a test instance 
             const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", testGithub);
 
             //Expect to getGithub()
@@ -38,7 +38,7 @@ describe("Engineer", () => {
         //Test for getting the role, getRole()
         it("Should get the role, getRole()", () => {
 
-            //Create test instance 
+            //Create a test instance 
             const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", "testTest3455", testRole);
 
             //Expect to getRole()
