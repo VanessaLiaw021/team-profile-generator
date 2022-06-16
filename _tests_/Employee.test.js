@@ -53,4 +53,48 @@ describe("Employee", () => {
             expect(employee.email).toBe(testEmail);
         });
     });
+
+    //Test the getter methods
+    describe("Getter Methods, getName(), getId(), getEmail(), getRole()", () => {
+
+        //Test case for getting the name, getName() 
+        it("Should get the name of the employee, getName()", () => {
+
+            //Create a test instance 
+            const employee = new Employee(testName);
+
+            //Expect to getName()
+            expect(employee.getName()).toBe(testName);
+        });
+
+        //Test case for getting the id number, getId() 
+        it("Should get the id of the employee, getId()", () => {
+
+            //Create a test instance 
+            const employee = new Employee(testName, testId);
+
+            //Expect to getId()
+            expect(employee.getId()).toBe(testId);
+        });
+
+        //Test case for getting the email, getEmail()
+        it("Should get the email of the employee, getEmail()", () => {
+
+            //Create a test instance 
+            const employee = new Employee(testName, testId, testEmail);
+
+            //Expect to getEmail()
+            expect(employee.getEmail()).toBe(testEmail);
+        });
+
+        //Test case for getting the role, getRole()
+        it("Should get the role of the employee, getRole()", () => {
+
+            //Create a test instance 
+            const employee = new Employee(testName, testId, testEmail, testRole);
+
+            //Expect to getRole()
+            expect(employee.getRole()).toBe(testRole);
+        });
+    });
 });
