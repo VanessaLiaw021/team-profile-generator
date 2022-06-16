@@ -70,7 +70,7 @@ const generateTeams = (teamData) => {
             <ul class="list-group list-group-flush p-3">
                 <li class="list-group-item border">ID: ${engineer.getId()}</li>
                 <li class="list-group-item border">Email: <a href="mailto: ${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a></li>
-                <li class="list-group-item border">GitHub Username: <a href="${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+                <li class="list-group-item border">GitHub Username: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
             </ul>
         </div>
         `;
