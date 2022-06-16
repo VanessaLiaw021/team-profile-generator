@@ -143,6 +143,51 @@ const promptEngineer = () => {
     });
 };
 
+//Function that prompt the user for intern questions
+const promptIntern = () => {
+
+    //Create an array of objects to ask intern required information 
+    const internQuestions = [
+        {
+            //Question for intern's name 
+            type: "input", 
+            name: "name", 
+            message: "What is the team intern's name?"
+        },
+        {
+            //Question for intern's id number 
+            type: "input", 
+            name: "id",
+            message: "What is the team intern's id number?"
+        },
+        {
+            //Question for intern's email address 
+            type: "input", 
+            name: "email", 
+            message: "What is the team intern's email address?"
+        },
+        {
+            //Question for intern's school name
+            type: "input", 
+            name: "school",
+            message: "What school is the team intern's attending at?"
+        }
+    ];
+
+    //Prompt user for intern questions, then create an intern instance, push to array and call the next prompted question 
+    inquirer.prompt(internQuestions).then(response => {
+
+        //Create the intern instance 
+        const createIntern = new Intern(response.name, response.id, response.email, response.school);
+
+        //Push the intern instance to the array 
+        teamMembers.push(createIntern);
+
+        //Call the function to prompt the user with a menu selection
+        promptMenuSelection();
+    });
+};
+
 //Function for initialize app 
 const init = () => {
 
