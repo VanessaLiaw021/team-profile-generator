@@ -39,7 +39,7 @@ describe("Engineer", () => {
         it("Should get the role, getRole()", () => {
 
             //Create test instance 
-            const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", testGithub, "Engineer");
+            const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", "testTest3455", testRole);
 
             //Expect to getRole()
             expect(engineer.getRole()).toBe("Engineer");
