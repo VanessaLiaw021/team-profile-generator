@@ -1,8 +1,12 @@
 /* Style the card */
 .card {
-    height: 300px;
+    height: 330px;
 }
 
 .card i {
     padding-right: 10px;
+}
+
+ul li a {
+    text-decoration: none;
 }
