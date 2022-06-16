@@ -101,6 +101,30 @@ const generateTeams = (teamData) => {
         //Push intern card to array 
         teamResults.push(internCard);
     };
+
+    //Loop through each team data in the array and call the function 
+    teamData.forEach(members => {
+
+        //Check to see which role to generate which card 
+        if (members.getRole() === "Manager") {
+
+            //Call the function to generate manager card 
+            generateManagerCard();
+
+        } else if (members.getRole() === "Engineer") {
+
+            //Call the function to generate engineer card 
+            generateEngineerCard();
+
+        } else {
+
+            //Call the function to generate intern card 
+            generateInternCard();
+        }
+    });
+
+    //Return the html card that is generated and join them together in the html page 
+    return teamResults.join("");
 };
 
 //Export createMarkupHTML() function
