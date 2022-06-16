@@ -38,11 +38,31 @@ npm i jest -D
 
 ## Visuals 
 
+This show how you would run the test for this application and it should all pass
+
+![How to run a test case](./images/test.png)
+
+This show how you would start the application 
+
+![How to start this program](./images/startProgram.png)
+
+This is the list of prompt question that you will be ask 
+
+![Prompt Questions](./images/questions.png)
+
+This is where the folder of the generated index.html will be located
+
+![Folder Location of index.html](./images/folder.png)
+
+This is how the page will look like when you finish building your team
+
+![Generated index.html](./images/generatedPage.png)
+
 ## Resources
 
 - [Github Repo](https://github.com/VanessaLiaw021/team-profile-generator)
 
-- [Sample Index.html]()
+- [Sample Index.html](https://raw.githubusercontent.com/VanessaLiaw021/team-profile-generator/main/dist/index.html)
 
 - [Demo](https://drive.google.com/file/d/117IQsl0GQjruPUxgUykPmL0yFeLaxA4W/view)
 
