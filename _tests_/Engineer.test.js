@@ -21,4 +21,28 @@ describe("Engineer", () => {
             expect(engineer.github).toBe(testGithub);
         });
     });
+
+    //Test the getter methods 
+    describe("Getter method, getGithub(), getRole()", () => {
+
+        //Test for getting the github username, getGithub()
+        it("Should get the github username, getGithub()", () => {
+
+            //Create test instance 
+            const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", testGithub);
+
+            //Expect to getGithub()
+            expect(engineer.getGithub()).toBe(testGithub);
+        });
+
+        //Test for getting the role, getRole()
+        it("Should get the role, getRole()", () => {
+
+            //Create test instance 
+            const engineer = new Engineer("Lucy", 3, "testEmail@gmail.com", testGithub, "Engineer");
+
+            //Expect to getRole()
+            expect(engineer.getRole()).toBe("Engineer");
+        });
+    });
 });
