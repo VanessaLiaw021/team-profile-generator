@@ -9,7 +9,7 @@ const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
 //Passed in the html template 
-const generateTeams = require("./src/template");
+const generateCards = require("./src/template");
 
 //Store user input in the array 
 let teamMembers = [];
@@ -93,7 +93,7 @@ const promptMenuSelection = () => {
             const fileName = "./dist/index.html";
 
             //Call the function to generate the html page
-            writeToFile(fileName, generateTeams(teamMembers));
+            writeToFile(fileName, generateCards(teamMembers));
         }
     });
 };

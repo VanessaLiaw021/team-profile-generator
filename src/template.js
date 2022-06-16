@@ -29,13 +29,14 @@ const createMarkupHTML = (markup) => {
 
 //Function that create each card for each employee and display it to the html page
 const generateTeams = (teamData) => {
+    console.log(teamData);
 
     //Store each of the employee created card to the array 
-    let teamResults = [];
+    const teamResults = [];
 
-    //Function that create the manager's card 
+    //Function that create the manager's card
     const generateManagerCard = (manager) => {
-        
+
         //Layout of the manager card
         const managerCard = `
         <!--Card for manager-->
@@ -52,7 +53,7 @@ const generateTeams = (teamData) => {
         </div>
         `;
 
-        //Push the manager card to the array 
+        //Push the manager card to array
         teamResults.push(managerCard);
     };
 
