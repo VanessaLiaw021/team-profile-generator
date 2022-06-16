@@ -96,3 +96,13 @@ const promptMenuSelection = () => {
         }
     });
 };
+
+//Function for initialize app 
+const init = () => {
+
+    //Call the function to first generate the team Manager information when application starts 
+    promptManager();
+};
+
+//Call the initalize function
+init();
