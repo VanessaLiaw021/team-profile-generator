@@ -2,3 +2,7 @@
 .card i {
     padding-right: 10px;
 }
+
+.card {
+    height: 300px;
+}
