@@ -48,12 +48,51 @@ const promptManager = () => {
     inquirer.prompt(managerQuestions).then(response => {
 
         //Create the manager instance 
-        const createManager = new Manager (response.name, response.id, response.email, response.officeNumber);
+        const createManager = new Manager(response.name, response.id, response.email, response.officeNumber);
 
         //Push the manager instance to the array 
         teamMembers.push(createManager);
 
         //Call the function to prompt the user with a menu selection 
         promptMenuSelection(); 
+    });
+};
+
+//Function that prompt user for a menu selection 
+const promptMenuSelection = () => {
+
+    //Create an array of objects to ask for a menu selection 
+    const menuSelectionQuestion = [
+        {
+            //Question for choosing if they want to add an engineer, intern, or finish building team
+            type: "list",
+            name: "menu",
+            message: "Who would you like to add next or Are your finish building your team?",
+            choices: ["Engineer", "Intern", "Finish Building my Team"]
+        }
+    ];
+
+    //Prompt user for menu selection, then takes user to the correct prompt question or generate the html page
+    inquirer.prompt(menuSelectionQuestion).then(response => {
+
+        //Check to see what to display next based on user choices 
+        if (response.menu === "Engineer") {
+
+            //Call the function to prompt engineer questions 
+            promptEngineer();
+
+        } else if (response.menu === "Intern") {
+
+            //Call the function to prompt intern questions
+            promptIntern();
+
+        } else {
+
+            //Create the filename 
+            const fileName = "./dist/index.html";
+
+            //Call the function to generate the html page
+            writeToFile(fileName, generateTeams(teamMembers));
+        }
     });
 };
