@@ -105,20 +105,20 @@ const generateTeams = (teamData) => {
     //Loop through each team data in the array and call the function
     teamData.forEach(members => {
 
-        //Check to see which role to generate which card
+        //Check to see which role to generate which card for the employee
         if (members.getRole() === "Manager") {
 
-            //Call the function createManagerCard() to generate manager card
+            //Call the function to generate manager card
             createManagerCard(members);
 
         } else if (members.getRole() === "Engineer") {
 
-            //Call the function createEngineerCard() to generate engineer card
+            //Call the function to generate engineer card
             createEngineerCard(members);
 
         } else {
 
-            //Call the function createInternCard() to generate intern card
+            //Call the function to generate intern card
             createInternCard(members);
         }
     });
