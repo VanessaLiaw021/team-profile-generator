@@ -3,7 +3,7 @@ const Employee = require("../lib/Employee");
 
 //Create test case variable for each property 
 const testName = "Lucy";
-const testId = 4;
+const testId = 3;
 const testEmail = "testEmail@gmail.com";
 const testRole = "Employee";
 
@@ -14,10 +14,10 @@ describe("Employee", () => {
     describe("Initialization", () => {
 
         //Test case for creating an object
-        it("Should create an object with the property of name, id, email, and role", () => {
+        it("Should create an object", () => {
 
             //Create a empty test instance 
-            const employee = new Employee(testName, testId, testEmail, testRole);
+            const employee = new Employee();
 
             //Expected outcome should be an object 
             expect(typeof(employee)).toBe("object");
@@ -37,7 +37,7 @@ describe("Employee", () => {
         it("Should set the id in constructor argument to be id", () => {
 
             //Create a test instance 
-            const employee = new Employee(testName, testId);
+            const employee = new Employee("Lucy", testId);
 
             //Expected outsome should be id
             expect(employee.id).toBe(testId);
@@ -47,7 +47,7 @@ describe("Employee", () => {
         it("Should set the email in constructor argument to be email", () => {
 
             //Create a test instance 
-            const employee = new Employee(testName, testId, testEmail);
+            const employee = new Employee("Lucy", 3, testEmail);
 
             //Expected outsome should be id
             expect(employee.email).toBe(testEmail);
@@ -71,7 +71,7 @@ describe("Employee", () => {
         it("Should get the id of the employee, getId()", () => {
 
             //Create a test instance 
-            const employee = new Employee(testName, testId);
+            const employee = new Employee("Lucy", testId);
 
             //Expect to getId()
             expect(employee.getId()).toBe(testId);
@@ -81,7 +81,7 @@ describe("Employee", () => {
         it("Should get the email of the employee, getEmail()", () => {
 
             //Create a test instance 
-            const employee = new Employee(testName, testId, testEmail);
+            const employee = new Employee("Lucy", 3, testEmail);
 
             //Expect to getEmail()
             expect(employee.getEmail()).toBe(testEmail);
@@ -91,7 +91,7 @@ describe("Employee", () => {
         it("Should get the role of the employee, getRole()", () => {
 
             //Create a test instance 
-            const employee = new Employee(testName, testId, testEmail, testRole);
+            const employee = new Employee("Lucy", 3, "testEmail@gmail.com", testRole);
 
             //Expect to getRole()
             expect(employee.getRole()).toBe(testRole);
