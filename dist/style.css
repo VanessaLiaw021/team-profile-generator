@@ -1,8 +1,8 @@
-/* Style the card icons */
-.card i {
-    padding-right: 10px;
-}
-
+/* Style the card */
 .card {
     height: 300px;
+}
+
+.card i {
+    padding-right: 10px;
 }
