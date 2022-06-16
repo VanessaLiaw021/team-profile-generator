@@ -192,7 +192,7 @@ const promptIntern = () => {
 const writeToFile = (fileName, data) => {
 
     //Write file to create the HTML 
-    fs.writeFile(fileName, data, err => {
+    fs.writeFile(fileName, data, (err) => {
 
         //If error exist, display the error
         if (err) return console.log(err);

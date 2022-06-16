@@ -27,15 +27,14 @@ const createMarkupHTML = (markup) => {
     `);
 };
 
-//Function that create each card for each employee and display it to the html page
+//Create each card for each user inputted
 const generateTeams = (teamData) => {
-    console.log(teamData);
 
-    //Store each of the employee created card to the array 
+    //Create an empty to push the html card to store  
     const teamResults = [];
 
     //Function that create the manager's card
-    const generateManagerCard = (manager) => {
+    const createManagerCard = (manager) => {
 
         //Layout of the manager card
         const managerCard = `
@@ -53,15 +52,15 @@ const generateTeams = (teamData) => {
         </div>
         `;
 
-        //Push the manager card to array
+        //Push the manager card the array
         teamResults.push(managerCard);
     };
 
-    //Function that create the engineer's card 
-    const generateEngineerCard = (engineer) => {
+    //Create card for engineer
+    const createEngineerCard = (engineer) => {
 
-        //Layout of the engineer card
-        const engineerCard =  `
+        //Create engineer card
+        const engineerCard = `
         <!--Card for engineer-->
         <div class="card m-3 bg-light" style="width: 18rem;">
             <div class="card-header bg-primary text-light">
@@ -71,20 +70,20 @@ const generateTeams = (teamData) => {
             <ul class="list-group list-group-flush p-3">
                 <li class="list-group-item border">ID: ${engineer.getId()}</li>
                 <li class="list-group-item border">Email: <a href="mailto: ${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a></li>
-                <li class="list-group-item border">GitHub Username: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+                <li class="list-group-item border">GitHub Username: <a href="${engineer.getGithub()}">${engineer.getGithub()}</a></li>
             </ul>
         </div>
         `;
 
-        //Push the engineer card to the array 
+        //Push engineer card to the array 
         teamResults.push(engineerCard);
     };
 
-    //Function that create the intern's card
-    const generateInternCard = (intern) => {
+    //Create card for intern
+    const createInternCard = (intern) => {
 
-        //Layout of the intern card 
-        const internCard = `
+        //Create intern card
+        const internCard =  `
         <!--Card for intern-->
         <div class="card m-3 bg-light" style="width: 18rem;">
             <div class="card-header bg-primary text-light">
@@ -99,32 +98,32 @@ const generateTeams = (teamData) => {
         </div>
         `;
 
-        //Push intern card to array 
+        //Push intern card to the array 
         teamResults.push(internCard);
     };
 
-    //Loop through each team data in the array and call the function 
+    //Loop through each team data in the array and call the function
     teamData.forEach(members => {
 
-        //Check to see which role to generate which card 
+        //Check to see which role to generate which card
         if (members.getRole() === "Manager") {
 
-            //Call the function to generate manager card 
-            generateManagerCard();
+            //Call the function createManagerCard() to generate manager card
+            createManagerCard(members);
 
         } else if (members.getRole() === "Engineer") {
 
-            //Call the function to generate engineer card 
-            generateEngineerCard();
+            //Call the function createEngineerCard() to generate engineer card
+            createEngineerCard(members);
 
         } else {
 
-            //Call the function to generate intern card 
-            generateInternCard();
+            //Call the function createInternCard() to generate intern card
+            createInternCard(members);
         }
     });
 
-    //Return the html card that is generated and join them together in the html page 
+    //Return the html card that is generated and join them together
     return teamResults.join("");
 };
 
