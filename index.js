@@ -89,11 +89,11 @@ const promptMenuSelection = () => {
 
         } else {
 
-            //Create the filename 
-            const fileName = "./dist/index.html";
+            //Create the html page with the name added to the array
+            fs.writeFileSync("./dist/index.html", generateCards(teamMembers));
 
-            //Call the function to generate the html page
-            writeToFile(fileName, generateCards(teamMembers));
+            //Dislpay message to let the user know the html page is generating
+            console.log("Success! Generating your team HTML page");
         }
     });
 };
@@ -185,20 +185,6 @@ const promptIntern = () => {
 
         //Call the function to prompt the user with a menu selection
         promptMenuSelection();
-    });
-};
-
-//Function that create the HTML file 
-const writeToFile = (fileName, data) => {
-
-    //Write file to create the HTML 
-    fs.writeFile(fileName, data, (err) => {
-
-        //If error exist, display the error
-        if (err) return console.log(err);
-
-        //Display message when html page is successully created
-        console.log("Success! Generating your team member page...");
     });
 };
 
