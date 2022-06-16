@@ -78,6 +78,29 @@ const generateTeams = (teamData) => {
         //Push the engineer card to the array 
         teamResults.push(engineerCard);
     };
+
+    //Function that create the intern's card
+    const generateInternCard = (intern) => {
+
+        //Layout of the intern card 
+        const internCard = `
+        <!--Card for intern-->
+        <div class="card m-3 bg-light" style="width: 18rem;">
+            <div class="card-header bg-primary text-light">
+                <h2 class="text-center pt-2">${intern.getName()}</h2>
+                <h3 class="text-center"><i class="fa-solid fa-mug-hot"></i>${intern.getRole()}</h3>
+            </div>
+            <ul class="list-group list-group-flush p-3">
+                <li class="list-group-item border">ID: ${intern.getId()}</li>
+                <li class="list-group-item border">Email: <a href="mailto: ${intern.getEmail()}" target="_blank">${intern.getEmail()}</a></li>
+                <li class="list-group-item border">School: ${intern.getSchool()}</li>
+            </ul>
+        </div>
+        `;
+
+        //Push intern card to array 
+        teamResults.push(internCard);
+    };
 };
 
 //Export createMarkupHTML() function
