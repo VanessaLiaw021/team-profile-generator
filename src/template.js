@@ -65,7 +65,7 @@ const generateTeams = (teamData) => {
         <div class="card m-3 bg-light" style="width: 18rem;">
             <div class="card-header bg-primary text-light">
                 <h2 class="text-center pt-2">${engineer.getName()}</h2>
-                <h3 class="text-center"><i class="fa-solid fa-mug-hot"></i>${engineer.getRole()}</h3>
+                <h3 class="text-center"><i class="fa-solid fa-glasses"></i>${engineer.getRole()}</h3>
             </div>
             <ul class="list-group list-group-flush p-3">
                 <li class="list-group-item border">ID: ${engineer.getId()}</li>
@@ -88,7 +88,7 @@ const generateTeams = (teamData) => {
         <div class="card m-3 bg-light" style="width: 18rem;">
             <div class="card-header bg-primary text-light">
                 <h2 class="text-center pt-2">${intern.getName()}</h2>
-                <h3 class="text-center"><i class="fa-solid fa-mug-hot"></i>${intern.getRole()}</h3>
+                <h3 class="text-center"><i class="fa-solid fa-user-graduate"></i>${intern.getRole()}</h3>
             </div>
             <ul class="list-group list-group-flush p-3">
                 <li class="list-group-item border">ID: ${intern.getId()}</li>
