@@ -188,6 +188,20 @@ const promptIntern = () => {
     });
 };
 
+//Function that create the HTML file 
+const writeToFile = (fileName, data) => {
+
+    //Write file to create the HTML 
+    fs.writeFile(fileName, data, err => {
+
+        //If error exist, display the error
+        if (err) return console.log(err);
+
+        //Display message when html page is successully created
+        console.log("Success! Generating your team member page...");
+    });
+};
+
 //Function for initialize app 
 const init = () => {
 
