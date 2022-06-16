@@ -55,6 +55,29 @@ const generateTeams = (teamData) => {
         //Push the manager card to the array 
         teamResults.push(managerCard);
     };
+
+    //Function that create the engineer's card 
+    const generateEngineerCard = (engineer) => {
+
+        //Layout of the engineer card
+        const engineerCard =  `
+        <!--Card for engineer-->
+        <div class="card m-3 bg-light" style="width: 18rem;">
+            <div class="card-header bg-primary text-light">
+                <h2 class="text-center pt-2">${engineer.getName()}</h2>
+                <h3 class="text-center"><i class="fa-solid fa-mug-hot"></i>${engineer.getRole()}</h3>
+            </div>
+            <ul class="list-group list-group-flush p-3">
+                <li class="list-group-item border">ID: ${engineer.getId()}</li>
+                <li class="list-group-item border">Email: <a href="mailto: ${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a></li>
+                <li class="list-group-item border">GitHub Username: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+            </ul>
+        </div>
+        `;
+
+        //Push the engineer card to the array 
+        teamResults.push(engineerCard);
+    };
 };
 
 //Export createMarkupHTML() function
