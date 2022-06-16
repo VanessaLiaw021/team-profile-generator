@@ -21,4 +21,28 @@ describe("Manager", () => {
             expect(manager.officeNumber).toBe(testOfficeNumber);
         });
     });
+
+    //Test the getter method 
+    describe("Getter method, getOfficeNumber(), getRole()", () => {
+
+        //Test for getting the office number, getOfficeNumber()
+        it("Should get the office number, getOfficeNumber()", () => {
+
+            //Create a test instance 
+            const manager = new Manager("Lucy", 3, "testEmail@gmail.com", testOfficeNumber);
+
+            //Expect to getOfficeNumber()
+            expect(manager.getOfficeNumber()).toBe(testOfficeNumber);
+        });
+
+        //Test for getting the role, getRole()
+        it("Should get the role, getRole()", () => {
+
+            //Create a test instance 
+            const manager = new Manager("Lucy", 3, "testEmail@gmail.com", 335, testRole);
+
+            //Expect to getRole()
+            expect(manager.getRole()).toBe(testRole);
+        });
+    });
 });
