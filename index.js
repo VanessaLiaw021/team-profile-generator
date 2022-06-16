@@ -1,4 +1,5 @@
 //Pass in the required packages 
+const { create } = require("domain");
 const fs = require("fs");
 const inquirer = require("inquirer");
 
@@ -94,6 +95,51 @@ const promptMenuSelection = () => {
             //Call the function to generate the html page
             writeToFile(fileName, generateTeams(teamMembers));
         }
+    });
+};
+
+//Function that prompt user for engineer questions
+const promptEngineer = () => {
+
+    //Create an array of objects to ask engineer require information 
+    const engineerQuestions = [
+        {
+            //Question for engineer's name 
+            type: "input",
+            name: "name",
+            message: "What is the team engineer's name?"
+        },
+        {
+            //Question for engineer's id number
+            type: "input", 
+            name: "id", 
+            message: "What is the team engineer's id number?"
+        },
+        {
+            //Question for engineer's email address
+            type: "input", 
+            name: "email", 
+            message: "What is the team engineer's email address?"
+        },
+        {
+            //Question for engineer's github username 
+            type: "input", 
+            name: "github", 
+            message: "What is the team engineer's github username?"
+        }
+    ];
+
+    //Prompt user for engineer questions, then create an engineer instance, push to array and call the next prompted question  
+    inquirer.prompt(engineerQuestions).then(response => {
+
+        //Create the engineer instance 
+        const createEngineer = new Engineer(response.name, response.id, response.email, response.github);
+
+        //Push the engineer instance to the array 
+        teamMembers.push(createEngineer);
+
+        //Call the function to prompt the user with a menu selection
+        promptMenuSelection();
     });
 };
 
